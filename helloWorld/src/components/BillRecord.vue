@@ -102,8 +102,6 @@
       :visible.sync = "dialogTableVisible"
       v-on:refreshRecords = "refreshRecords">
     </BillForm>
-
-
   </div>
 </template>
 

@@ -56,11 +56,11 @@
               let _this = this;
               _this.$axios.post("/login", JSON.stringify(_this.ruleForm2)
               ).then(function (res) {
-
                   console.log(res.data);
                   _this.userToken = 'Bearer ' + res.data.token;
                   // 将用户token保存到vuex中
-                  _this.changeLogin({ Authorization: _this.userToken });
+                 // _this.changeLogin({ Authorization: _this.userToken });
+                  _this.$store.commit('changeLogin',{ Authorization: _this.userToken });
                   _this.$router.push('/index');
                   alert('登陆成功');
 

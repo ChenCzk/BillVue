@@ -13,9 +13,7 @@ instance.interceptors.request.use(
         config.headers.common['token'] = localStorage.getItem('Authorization');
       }
     }
-
     return config
-
   },
 
   error => {

@@ -54,15 +54,9 @@ const router = new  Router({
 // 使用 router.beforeEach 注册一个全局前置守卫，判断用户是否登陆
 router.beforeEach((to, from, next) => {
   if (to.path === '/login') {
-    console.log(to.path);
-    console.log("2");
     next();
   } else {
     let token = localStorage.getItem('Authorization');
-    console.log("1");
-    console.log(token);
-    console.log(store.state.Authorization);
-
     if (token === null || token === '') {
       next('/login');
     }
@@ -71,7 +65,6 @@ router.beforeEach((to, from, next) => {
     }else {
       next('/login');
     }
-
   }
 });
 export default router;

@@ -214,14 +214,11 @@
         var _this = this;
         if (_this.checkFormDateIsIllegal()) {
           console.log(this.form);
-          // 检查this.$axios.get
-          _this.$axios.defaults.headers.post['Content-Type'] = 'application/json';
           if (_this.isNEW == true) {
             _this.$axios.post("/addRecord", JSON.stringify(_this.form)
             ).then(function (value) {
               if (value.data.success != null && value.data.success == true) {
                 _this.showSuccessToast("上传成功");
-
               } else {
                 _this.showErrorToast("上传失败");
               }

@@ -3,7 +3,6 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
-
   state: {
     // 存储token
     Authorization: localStorage.getItem('Authorization') ? localStorage.getItem('Authorization') : ''
@@ -14,7 +13,6 @@ const store = new Vuex.Store({
     changeLogin (state, user) {
       state.Authorization = user.Authorization;
       localStorage.setItem('Authorization', user.Authorization);
-      console.log(this.state.Authorization);
     }
   }
 });
